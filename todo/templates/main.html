@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Page</title>
+</head>
+<body>
+    {% if todo_list %}
+        {% for todo in todo_list %}
+            {% if todo.done %}
+                <strike>
+            {% endif %}
+            <label for="todo_{{ todo.id }}">{{ todo.title }}</label>
+            {% if todo.done %}
+                </strike>
+            {% endif %}
+            <p>Created: {{ todo.created }}</p>
+            <a href="/todo/{{ todo.id }}">Edit</a>
+            <hr>
+        {% endfor %}
+    {% else %}
+        No todos
+    {% endif %}
+</body>
+</html>

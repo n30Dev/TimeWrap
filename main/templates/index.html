@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow" rel="stylesheet" />
+    <title>My Page</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        /* Ellipse 80 */
+        .ellipse-80 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            left: 520px;
+            top: 200px;
+            border-radius: 50%;
+            background: rgb(0, 0, 128);
+        }
+
+        /* Ellipse 81 */
+        .ellipse-81 {
+            position: absolute;
+            width: 90x;
+            height: 236px;
+            left: 821px;
+            top: 332px;
+            background: linear-gradient(180deg,
+                    #004cff 0%,
+                    rgba(0, 26, 255, 0) 100%);
+        }
+
+        /* Ellipse 82 */
+        .ellipse-82 {
+            position: absolute;
+            width: 150px;
+            height: 355px;
+            left: 728px;
+            top: 243px;
+            background: linear-gradient(180deg,
+                    #0033ff 0%,
+                    rgba(7, 26, 133, 0.69) 100%);
+        }
+
+        /* Ellipse 83 */
+        .ellipse-83 {
+            position: absolute;
+            width: 108px;
+            height: 112px;
+            left: 580px;
+            top: 364px;
+            background: linear-gradient(180deg,
+                    #0088ff 0%,
+                    rgba(0, 194, 255, 0) 100%);
+        }
+
+        /* Ellipse 84 */
+        .ellipse-84 {
+            position: absolute;
+            width: 101px;
+            height: 100px;
+            left: 598px;
+            top: 490px;
+            background: #0038ff;
+        }
+
+        /* Ellipse 85 */
+        .ellipse-85 {
+            position: absolute;
+            width: 79px;
+            height: 58px;
+            left: 663px;
+            top: 321px;
+            background: linear-gradient(180deg,
+                    #ff0000 0%,
+                    rgba(231, 223, 5, 0.66) 100%);
+        }
+
+        /* Ellipse 87 */
+        .ellipse-87 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            left: 520px;
+            top: 200px;
+            border-radius: 50%;
+            background: rgba(7, 42, 112, 0.123);
+            backdrop-filter: blur(50px);
+
+            /* Note: backdrop-filter has minimal browser support */
+        }
+
+        /* TO DO: */
+        .todo {
+            position: absolute;
+            width: 224px;
+            height: 69px;
+            left: 669px;
+            top: 250px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 49px;
+            line-height: 35px;
+            /* or 55% */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #f5fefd;
+        }
+
+        /* ADD TASKS + */
+        .add-tasks {
+            position: absolute;
+            width: 342px;
+            height: 53px;
+            left: 640px;
+            top: 548px;
+            font-family: sans-serif !important;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #f5fefd;
+            cursor: pointer;
+            transition: color 0.5s;
+            user-select: none;
+        }
+
+        .add-tasks:hover {
+            color: #bcbcbc;
+            transition: color 0.1s;
+        }
+
+        .add-tasks:active {
+            color: #fff;
+        }
+
+        .wrapper {
+            color: rgb(0, 0, 128) !important;
+        }
+
+        /* LUNCH WITH SAM */
+        .lunch-with-sam {
+            position: absolute;
+            width: 301px;
+            height: 22px;
+            left: 610px;
+            top: 336px;
+            font-family: sans-serif !important;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #f5fefd;
+        }
+
+        .task {
+            position: absolute;
+
+
+            width: 100vw;
+            height: 100%;
+            max-width: 300px;
+            font-family: sans-serif;
+            font-style: normal;
+            font-weight: 600;
+
+            /*{
+                top: 336px;
+                #
+            }
+
+                {
+                #left: 610px;
+                #
+            }*/
+
+            color: #f5fefd;
+            align-items: center;
+            display: flex;
+            padding-left: 55px;
+            font-size: 22px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Ellipse 27 */
+        .ellipse-27 {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            left: 564px;
+            top: 330px;
+            background: #f5fefd;
+            border-radius: 50%;
+        }
+
+        /* Ellipse 27 */
+        .ellipse-28 {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            left: 549px;
+            top: 370px;
+            background: #f5fefd;
+            border-radius: 50%;
+        }
+
+        /* CALL MOM */
+        .call-mom {
+            position: absolute;
+            width: 301px;
+            height: 22px;
+            left: 594px;
+            top: 374px;
+            font-family: sans-serif !important;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #f5fefd;
+        }
+
+        /* Rectangle 5854 */
+        .rectangle-5854 {
+            position: absolute;
+            width: 215px;
+            height: 2px;
+            left: 637px;
+            top: 590px;
+            background: #f5fefd;
+            border-radius: 10px;
+        }
+
+        /* CHECK DEADLINES */
+        .chekdedlines {
+            position: absolute;
+            width: 73px;
+            height: 44px;
+            left: 1320px;
+            top: 650px;
+
+            font-family: sans-serif !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        /* Deadline */
+        .dedlineimg {
+            position: absolute;
+            width: 209px;
+            height: 205px;
+            left: 1250px;
+            top: 422px;
+        }
+
+        .calendar {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 15px;
+            top: 25px;
+        }
+
+        .schedule {
+            position: absolute;
+            width: 13px;
+            height: 44px;
+            left: 25px;
+            top: 98px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .mindmap {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 31px;
+            top: 130px;
+        }
+
+        .mindmaptxt {
+            position: absolute;
+            width: 100px;
+            height: 44px;
+            left: 24px;
+            top: 205px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .calendartxt {
+            position: absolute;
+            width: 100px;
+            height: 44px;
+            left: 22px;
+            top: 320px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .calendarimg {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 25px;
+            top: 240px;
+        }
+
+        .notestxt {
+            position: absolute;
+            width: 100px;
+            height: 44px;
+            left: 37px;
+            top: 427px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .notesimg {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 23px;
+            top: 352px;
+        }
+
+        .liststxt {
+            position: absolute;
+            width: 100px;
+            height: 44px;
+            left: 45px;
+            top: 539px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .listsimg {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 18px;
+            top: 460px;
+        }
+
+        .diatxt {
+            position: absolute;
+            width: 100px;
+            height: 44px;
+            left: 24px;
+            top: 649px;
+
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 25px;
+            /* or 83% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: rgba(0, 0, 128, 0.9);
+        }
+
+        .diaimg {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 23px;
+            top: 570px;
+        }
+
+        .settingsimg {
+            position: absolute;
+            width: 94px;
+            height: 73.87px;
+            left: 1430px;
+            top: 55px;
+        }
+
+        #rectanglemain {
+            position: absolute;
+            width: 72px;
+            height: 95px;
+            left: 705px;
+            top: 45px;
+            background: #0c0cc0;
+            border-radius: 30px;
+            backdrop-filter: blur(50px);
+        }
+
+        .rectangleh1 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 714px;
+            top: 72px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        .rectangleh2 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 729px;
+            top: 112px;
+            font-family: "Tomorrow";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 5px 3px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        #rectangle2 {
+            position: absolute;
+            width: 64px;
+            height: 86px;
+            left: 634px;
+            top: 50px;
+            background: #3232eb;
+            border-radius: 28px;
+            background: rgba(26, 5, 251, 0.181);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh1 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 641px;
+            top: 80px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle3 {
+            position: absolute;
+            width: 64px;
+            height: 86px;
+            left: 783px;
+            top: 50px;
+            background: #3232eb;
+            border-radius: 28px;
+            background: rgba(26, 5, 251, 0.181);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh2 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 791px;
+            top: 80px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Ellipse 105 */
+
+        .important {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            left: 834px;
+            top: 74px;
+            border-radius: 50%;
+
+            background: #ff5656;
+            box-shadow: 4px 4px 7px rgba(245, 254, 253, 0.25);
+        }
+
+        #rectangle4 {
+            position: absolute;
+            width: 56px;
+            height: 78px;
+            left: 571px;
+            top: 54px;
+            background: #3232eb;
+            border-radius: 25px;
+            background: rgba(26, 5, 251, 0.114);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh4 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 577px;
+            top: 80px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 21px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle5 {
+            position: absolute;
+            width: 56px;
+            height: 78px;
+            left: 854px;
+            top: 54px;
+            background: #3232eb;
+            border-radius: 25px;
+            background: rgba(26, 5, 251, 0.114);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh5 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 860px;
+            top: 80px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 21px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle6 {
+            position: absolute;
+            width: 47px;
+            height: 70px;
+            left: 517px;
+            top: 59px;
+            background: #3232eb;
+            border-radius: 21px;
+            background: rgba(26, 5, 251, 0.1);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh6 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 519px;
+            top: 81px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle7 {
+            position: absolute;
+            width: 47px;
+            height: 70px;
+            left: 917px;
+            top: 59px;
+            background: #3232eb;
+            border-radius: 21px;
+            background: rgba(26, 5, 251, 0.1);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh7 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 919px;
+            top: 81px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle8 {
+            position: absolute;
+            width: 40px;
+            height: 62px;
+            left: 470px;
+            top: 62px;
+            background: #3232eb;
+            border-radius: 18px;
+            background: rgba(26, 5, 251, 0.067);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh8 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 469px;
+            top: 81px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        #rectangle9 {
+            position: absolute;
+            width: 40px;
+            height: 62px;
+            left: 970px;
+            top: 62px;
+            background: #3232eb;
+            border-radius: 18px;
+            background: rgba(26, 5, 251, 0.067);
+            backdrop-filter: blur(50px);
+        }
+
+        .rectanglehh9 {
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            left: 969px;
+            top: 81px;
+            font-family: tomorrow !important;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Star 2 */
+
+        .star {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 983px;
+            top: 58px;
+        }
+
+        #rectangle10 {
+            position: absolute;
+            width: 42px;
+            height: 46px;
+            left: 422px;
+            top: 70px;
+            background: #3232eb;
+            border-radius: 18px;
+            background: rgba(26, 5, 251, 0.051);
+            backdrop-filter: blur(50px);
+        }
+
+        #rectangle11 {
+            position: absolute;
+            width: 42px;
+            height: 46px;
+            left: 1017px;
+            top: 70px;
+            background: #3232eb;
+            border-radius: 18px;
+            background: rgba(26, 5, 251, 0.051);
+            backdrop-filter: blur(50px);
+        }
+
+        .taskprefix {
+            z-index: 1;
+            border-radius: 100%;
+            width: 32px;
+            height: 32px;
+            left: 565px;
+            background-color: #fff;
+            display: flex;
+            user-select: none;
+            gap: 30px;
+        }
+
+        .checkmark {
+            display: flex;
+            line-height: 32px;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            color: green;
+        }
+
+        iconify-icon {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <div>
+        <div class="ellipse-80"></div>
+        <div class="ellipse-81"></div>
+        <div class="ellipse-82"></div>
+        <div class="ellipse-83"></div>
+        <div class="ellipse-84"></div>
+        <div class="ellipse-85"></div>
+        <div class="ellipse-87">
+            {% if count > 5 %}
+            <p
+                style="color: #fff; bottom: 85px; position: absolute; display: flex; width: 450px; font-size: 22px; font-weight: 600; justify-content: center; align-items: center">
+                ...</p>
+            {% endif %}
+        </div>
+        <div class="todo">TO DO:</div>
+        <div class="wrapper">
+            <div class="add-tasks" onclick="addtask()">ADD TASKS +</div>
+            {% for task in tasks %}
+            <div class="taskprefix" id="{{ task.id }}" onclick="boxclick(this.id, 'on')"
+                style="position: absolute; top: calc(330px + 40px * {{ forloop.counter0 }});">
+                {% if task.done %}
+                <div style="position: absolute; color: green; left: 8px; top: 4px; font-size: 18px; font-weight: 600">✓
+                </div>
+                {% endif %}
+                <div class="task">{{ task.title }}<iconify-icon width="32" icon="ion:trash"
+                        onclick="deletetask(this.id)" id="{{task.id}}"></iconify-icon></div>
+            </div>
+            {% endfor %}
+
+            <div class="rectangle-5854"></div>
+            <div class="dedlineimg"><img src="{% static 'deadlines.jpg' %}" /></div>
+            <div class="calendar"><img src="{% static 'calendar.jpg' %}" onclick="location.href='/schedule'" /></div>
+            <div class="schedule">SCHEDULE</div>
+            <div class="mindmap"><img src="{% static 'mindmap.jpg' %}" onclick="location.href='/mindmap'" /></div>
+            <div class="mindmaptxt">MIND MAP</div>
+            <div class="calendartxt">CALENDAR</div>
+            <div class="calendarimg"><img src="{% static 'calendar2.jpg' %}" onclick="location.href='/calendar'" />
+            </div>
+            <div class="notestxt">NOTES</div>
+            <div class="notesimg"><img src="{% static 'notes.jpg' %}" onclick="location.href='/notes'" /></div>
+            <div class="liststxt">LISTS</div>
+            <div class="listsimg"><img src="{% static 'lists.jpg' %}" onclick="location.href='/lists'" /></div>
+            <div class="diatxt">DIAGRAMS</div>
+            <div class="diaimg"><img src="{% static 'dia.jpg' %}" onclick="location.href='/dia'" /></div>
+            <div class="settingsimg"><img src="{% static 'settings.jpg' %}" onclick="location.href='/settings'" /></div>
+            <div class="chekdedlines">CHECK DEADLINES</div>
+            <div id="rectanglemain"></div>
+            <div class="rectangleh1">5 MAY</div>
+            <div class="rectangleh2">FRI</div>
+            <div id="rectangle2"></div>
+            <div class="rectanglehh1">04 MAY</div>
+            <div id="rectangle3"></div>
+            <div class="rectanglehh2">06 MAY</div>
+            <div class="important"></div>
+            <div id="rectangle4"></div>
+            <div class="rectanglehh4">03 MAY</div>
+            <div id="rectangle5"></div>
+            <div class="rectanglehh5">07 MAY</div>
+            <div id="rectangle6"></div>
+            <div class="rectanglehh6">02 MAY</div>
+            <div class="rectanglehh5">07 MAY</div>
+            <div id="rectangle7"></div>
+            <div class="rectanglehh7">08 MAY</div>
+            <div id="rectangle8"></div>
+            <div class="rectanglehh8">01 MAY</div>
+            <div id="rectangle9"></div>
+            <div class="rectanglehh9">09 MAY</div>
+            <div class="star">
+                <span style="font-size: 12px; color: rgb(255, 255, 0)">&starf;</span>
+            </div>
+            <div id="rectangle10"></div>
+            <div id="rectangle11"></div>
+        </div>
+
+        <script>
+            $(function () {
+                $('.taskprefix').bind('click', function (e) {
+                    e.stopPropagation();
+                    boxclick(e.target.id);
+                });
+                $('iconify-icon').bind('click', function (e) {
+                    deletetask(e.target.id);
+                })
+            });
+
+            function addtask() {
+                location.href = '/todo/add'
+            }
+
+            function off() {
+                return "off";
+            }
+
+            function on() {
+                return "on";
+            }
+
+
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function boxclick(id, done) {
+                fetch(`/todo/update/${id}`, {
+                    method: 'post',
+                    headers: {
+                        "X-CSRFToken": '{{csrf_token}}'
+                        // "X-CSRFToken": getCookie("csrftoken")
+                    },
+                    credentials: "same-origin",
+                    body: {
+                        done: 'on'
+                    }
+                }).then((response) => response.text()).then((data) => { console.log(data); location.reload() });
+            }
+
+            function deletetask(id) {
+                fetch(`todo/delete/${id}`, {
+                    method: 'post',
+                    headers: {
+                        "X-CSRFToken": '{{csrf_token}}'
+                        // "X-CSRFToken": getCookie("csrftoken")
+                    },
+                    credentials: "same-origin",
+                    body: {
+                        done: 'on'
+                    }
+                }).then((response) => response.text()).then((data) => { console.log(data); location.reload() });
+            }
+        </script>
+    </div>
+</body>
+
+</html>

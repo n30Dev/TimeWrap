@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Details</title>
+</head>
+<body>
+    <form method="post" action="/todo/update/{{ task.id }}">
+        {% csrf_token %}
+        <label>
+            {{ task.title }}
+        </label>
+        <br>
+        <label>
+            Done:
+            {% if task.done %}
+                <input type="checkbox" checked name="done" id="done">
+            {% else %}
+                <input type="checkbox" name="done" id="done">
+            {% endif %}
+        </label>
+        <br>
+        Created: {{ task.created }}
+        <br>
+        <input type="submit" value="Update">
+    </form>
+
+    <form method="post" action="/todo/delete/{{ task.id }}">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
